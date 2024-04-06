@@ -5,16 +5,20 @@ class InputTextField extends StatelessWidget {
   final Function(String value) onChanged;
   final bool? obscureText;
   final String? obscuringCharacter;
+  final TextInputType? keyboardType;
   const InputTextField(
       {super.key,
       this.hintText,
       required this.onChanged,
       this.obscureText,
-      this.obscuringCharacter});
+      this.obscuringCharacter,
+      this.keyboardType});
 
   @override
   Widget build(BuildContext context) {
     return TextField(
+      keyboardType: keyboardType,
+      textAlign: TextAlign.center,
       obscuringCharacter: obscuringCharacter ?? ".",
       onChanged: onChanged,
       obscureText: obscureText ?? false,
