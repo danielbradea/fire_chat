@@ -10,9 +10,11 @@ class WelcomeScreen extends StatefulWidget {
 
   @override
   State<WelcomeScreen> createState() => _WelcomeScreenState();
-}
+  
+  }
 
 class _WelcomeScreenState extends State<WelcomeScreen> {
+  
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -22,29 +24,26 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                const Hero(
-                  tag: "logo",
-                  child: Image(
-                    image: AssetImage("images/chat.png"),
-                    width: 50,
-                    height: 50,
-                  ),
-                ),
-                const SizedBox(width: 10),
-                AnimatedTextKit(
-                  repeatForever: false,
-                  animatedTexts: [
-                    TypewriterAnimatedText("Chat App",
-                        speed: const Duration(milliseconds: 200),
-                        cursor: "_",
-                        textStyle: const TextStyle(
-                            fontWeight: FontWeight.w900, fontSize: 20))
-                  ],
-                ),
-              ],
+            const Hero(
+              tag: "logo",
+              child: Image(
+                image: AssetImage("images/chat.png"),
+                width: 150,
+                height: 150,
+              ),
+            ),
+            const SizedBox(width: 20),
+            Center(
+              child: AnimatedTextKit(
+                repeatForever: false,
+                animatedTexts: [
+                  TypewriterAnimatedText("Chat App",
+                      speed: const Duration(milliseconds: 200),
+                      cursor: "_",
+                      textStyle: const TextStyle(
+                          fontWeight: FontWeight.w900, fontSize: 20))
+                ],
+              ),
             ),
             const SizedBox(
               height: 60,
